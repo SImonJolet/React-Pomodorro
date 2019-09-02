@@ -1,12 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./app.css";
-const App = () => {
-  return (
+const App = () => (
     <div>
-      <h1>Hello Parcel World</h1>
+        <h1>{"Hello darkness my old friend"}</h1>
     </div>
-  );
-};
+);
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<App />, document.querySelector("#root"));
