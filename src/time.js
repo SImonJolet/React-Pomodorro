@@ -1,6 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import "./app.css";
 
 const Timer = () => (
     <div>
@@ -8,4 +6,4 @@ const Timer = () => (
     </div>
 );
 
-ReactDOM.render(<Timer />, document.querySelector("#time"));
+export default Timer;
