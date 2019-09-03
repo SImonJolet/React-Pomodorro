@@ -8,4 +8,4 @@ const Timer = () => (
     </div>
 );
 
-ReactDOM.render(<Timer />, document.querySelector("#root"));
+ReactDOM.render(<Timer />, document.querySelector("#time"));
