@@ -32,7 +32,7 @@ export default () => {
         setSeconde(25 * 60);
     };
     return (
-        <div>
+        <div className={"flexContent"}>
             <div className={"timer"}>
                 {`${Math.floor(seconde / 60)
                     .toString()
