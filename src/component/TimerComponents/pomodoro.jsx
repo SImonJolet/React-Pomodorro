@@ -1,6 +1,4 @@
 import React, {useState, useEffect} from "react";
-import ReactDOM from "react-dom";
-import "../../app.css";
 
 const [seconde, setSeconde] = useState(25 * 60);
 const [paused, setPaused] = useState(true);
@@ -27,13 +25,13 @@ function resetTimer() {
     setPaused(true);
     setSeconde(25 * 60);
 }
-const App = () => (
+return (
     <div>
         {`${Math.floor(seconde / 60)
             .toString()
             .padStart(2, "0")}:${`${seconde % 60}`
             .toString()
-            .padStart(2, "0")}`}{" "}
+            .padStart(2, "0")}`}
         <button type={"button"} onClick={paused ? startTimer : pauseTimer}>
             {paused ? "Start" : "Pause"}
         </button>
@@ -42,5 +40,3 @@ const App = () => (
         </button>
     </div>
 );
-
-ReactDOM.render(<App />, document.querySelector("#root"));
