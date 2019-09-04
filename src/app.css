@@ -1,3 +1,6 @@
+html {
+    height: 100%;
+}
 body {
     margin: 0;
     min-height: 100%;
@@ -5,29 +8,73 @@ body {
 /* définition de la police */
 /*Css du Header */
 header {
-    background-color: #dedede;
+    background-color: #a6e1f3;
+    border: 1px solid #2ebbe6;
     font-family: "Raleway", sans-serif;
     width: 100%;
-    height: 140px;
+    height: 11vw;
+    margin-bottom: 4vw;
 }
 .title {
-    font-size: 40px;
+    font-size: 3.1vw;
     font-weight: bold;
-    margin-left: 40px;
-    padding-top: 25px;
+    margin-left: 3.1vw;
+    padding-top: 2vw;
 }
 /*Css du body*/
 .App {
     width: 70%;
     margin: auto;
 }
+.flexContent {
+    display: flex;
+}
+.timer {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+    width: 60%;
+    font-family: "Raleway", sans-serif;
+    font-weight: 900;
+    font-size: 7vw;
+}
+.bouton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    margin: auto;
+}
+button {
+    width: 100%;
+    height: 3.75vw;
+    font-family: "Raleway", sans-serif;
+    font-size: 1.2vw;
+    background-color: #a6e1f3;
+    border: 1px solid #2ebbe6;
+    border-radius: 2px;
+    margin: 0.5vw;
+    padding: 1vw;
+}
+@media (max-width: 425px) {
+    .flexContent {
+        display: block;
+    }
+    .timer {
+        text-align: center;
+        width: 100%;
+    }
+}
 /*Css du footer*/
 footer {
-    background-color: #dedede;
+    background-color: #a6e1f3;
+    border: 1px solid #2ebbe6;
     font-family: "Raleway", sans-serif;
     width: 100%;
-    height: 80px;
-    font-size: 10px;
+    height: 5vw;
+    margin-top: 4vw;
+    font-size: 0.9vw;
     font-weight: 200;
     display: flex;
     justify-content: flex-end;

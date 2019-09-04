@@ -49,7 +49,7 @@ export default () => {
                     id={"startStopBtn"}
                     type={"button"}
                     onClick={paused ? startTimer : pauseTimer}>
-                    {paused ? "Start" : "Pause"}
+                    {paused ? "Démarrer" : "Pause"}
                 </button>
                 <button id={"resetBtn"} type={"button"} onClick={resetTimer}>
                     {"Reset"}
