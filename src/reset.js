@@ -1,9 +1,11 @@
 import React from "react";
-
-const Reset = () => (
-    <div>
-        <h2>{"Reset btn"} </h2>
-    </div>
-);
+function Reset() {
+    // const [countSec, setCountSec] = useState();
+    return (
+        <div>
+            <button type={"button"}>{" Reset"}</button>
+        </div>
+    );
+}
 
 export default Reset;
