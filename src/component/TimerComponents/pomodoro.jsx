@@ -33,14 +33,14 @@ export default () => {
     };
     return (
         <div>
-            <div class={"timer"}>
+            <div className={"timer"}>
                 {`${Math.floor(seconde / 60)
                     .toString()
                     .padStart(2, "0")}:${`${seconde % 60}`
                     .toString()
                     .padStart(2, "0")}`}
             </div>
-            <div className="bouton">
+            <div className={"bouton"}>
                 {" "}
                 <button id={"plusBtn"} type={"button"} onClick={setPlus}>
                     {"Plus"}
