@@ -1,11 +1,11 @@
 import React, {useState, useEffect, Component} from "react";
-import Modal from "./modal.jsx"
+import Modal from "./modal.jsx";
 export default () => {
     const [seconde, setSeconde] = useState(5);
     const [paused, setPaused] = useState(true);
-    const [show, setShow] = useState(false);
+    const [show] = useState(true);
 
-    }
+    
     useEffect(() => {
         const interval = setInterval(() => {
             if (!paused) {
@@ -14,6 +14,7 @@ export default () => {
                         setPaused(true);
                         clearInterval(interval);
                         return s;
+                        show(true);
                     }
                     return s - 1;
                 });
@@ -82,9 +83,10 @@ export default () => {
                 <button id={"moinsBtn"} type={"button"} className={"basicBtn"}  onClick={setMoins}>
                     {"Retirer 1 minute"}
                 </button>
-                <Modal>
-                Coucou
-                </Modal> 
+
+                
+                <Modal />
+                 
             </div>
         </div>
     );
