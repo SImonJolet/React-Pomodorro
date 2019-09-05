@@ -25,10 +25,13 @@ export default () => {
     }, [paused]);
 
     const setPlus = () => {
-        setSeconde(seconde + 60);
+        if (paused) {
+            setSeconde(seconde + 60);
+        }
+        
     };
     const setMoins = () => {
-        if (seconde >60) {
+        if (seconde >60 && paused) {
             setSeconde(seconde - 60);
         }
     };
