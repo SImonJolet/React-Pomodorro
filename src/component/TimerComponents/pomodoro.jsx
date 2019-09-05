@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from "react";
-import Modal from "./modal.jsx"
+import React, {useState, useEffect, Component} from "react";
+import Dialog from "./modal.jsx"
 export default () => {
     const [seconde, setSeconde] = useState(5);
     const [paused, setPaused] = useState(true);
@@ -72,6 +72,8 @@ export default () => {
                 <button id={"moinsBtn"} type={"button"} onClick={setMoins}>
                     {"Retirer 1 minute"}
                 </button>
+                <Dialog>
+                </Dialog> 
             </div>
         </div>
     );

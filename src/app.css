@@ -57,6 +57,10 @@ button {
     border-radius: 2px;
     margin: 0.5vw;
     padding: 1vw;
+    cursor: pointer;
+}
+.modalBox{
+    border: 1px solid red;
 }
 @media (max-width: 425px) {
     .flexContent {

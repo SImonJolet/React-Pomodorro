@@ -1,5 +1,13 @@
-import React from "react";
+import React, {Component} from "react";
 
-export default () => {
-"Hello World, this is my modal"
+class Dialog extends Component {
+render() {
+    return (
+        <div className={"modalBox"}>
+            Hello Worl modal box
+        </div>
+    )
 }
+}
+
+export default Dialog;
