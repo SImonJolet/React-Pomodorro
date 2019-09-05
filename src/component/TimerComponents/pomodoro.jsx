@@ -1,19 +1,19 @@
 import React, {useState, useEffect, Component} from "react";
-import Dialog from "./modal.jsx"
+import Modal from "./modal.jsx"
 export default () => {
     const [seconde, setSeconde] = useState(5);
     const [paused, setPaused] = useState(true);
+    const [show, setShow] = useState(false);
 
+    }
     useEffect(() => {
         const interval = setInterval(() => {
             if (!paused) {
                 setSeconde(s => {
                     if (s <= 0) {
                         setPaused(true);
-                        setSeconde(5*60);
                         clearInterval(interval);
                         return s;
-                       
                     }
                     return s - 1;
                 });
@@ -24,6 +24,16 @@ export default () => {
             clearInterval(interval);
         };
     }, [paused]);
+    const showModal = () => {
+        if (second <= 0){
+            setShow(true);
+        }
+    };
+    const hideModal = () => {
+        if (second >= 1){
+            setShow(false);
+        }
+    }
 
     const setPlus = () => {
         if (paused) {
@@ -56,24 +66,25 @@ export default () => {
                     .padStart(2, "0")}`}
             </div>
             <div className={"bouton"}>
-                {" "}
-                <button id={"plusBtn"} type={"button"} onClick={setPlus}>
+              
+                <button id={"plusBtn"} type={"button"}  className={"basicBtn"} onClick={setPlus}>
                     {"Ajouter 1 minute"}
                 </button>
                 <button
                     id={"startStopBtn"}
-                    type={"button"}
+                    type={"button"} className={"basicBtn"} 
                     onClick={paused ? startTimer : pauseTimer}>
                     {paused ? "Démarrer" : "Pause"}
                 </button>
-                <button id={"resetBtn"} type={"button"} onClick={resetTimer}>
+                <button id={"resetBtn"} type={"button"} className={"basicBtn"}  onClick={resetTimer}>
                     {"Re-démarrer à 25:00"}
                 </button>
-                <button id={"moinsBtn"} type={"button"} onClick={setMoins}>
+                <button id={"moinsBtn"} type={"button"} className={"basicBtn"}  onClick={setMoins}>
                     {"Retirer 1 minute"}
                 </button>
-                <Dialog>
-                </Dialog> 
+                <Modal>
+                Coucou
+                </Modal> 
             </div>
         </div>
     );
