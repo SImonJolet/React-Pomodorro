@@ -1,14 +1,23 @@
 import React, {useState, useEffect} from "react";
 
 export default () => {
-    const [seconde, setSeconde] = useState(25 * 60);
+    const [seconde, setSeconde] = useState(5);
     const [paused, setPaused] = useState(true);
 
     useEffect(() => {
         const interval = setInterval(() => {
             if (!paused) {
-                setSeconde(s => s - 1);
-            }
+                setSeconde(s => {
+                    if (s <= 0) {
+                        setPaused(true);
+                        setSeconde(5*60);
+                        clearInterval(interval);
+                        return s;
+                    }
+                    return s - 1;
+                });
+            };
+            
         }, 1000);
         return () => {
             clearInterval(interval);
@@ -19,7 +28,9 @@ export default () => {
         setSeconde(seconde + 60);
     };
     const setMoins = () => {
-        setSeconde(seconde - 60);
+        if (seconde >60) {
+            setSeconde(seconde - 60);
+        }
     };
     const startTimer = () => {
         setPaused(false);
