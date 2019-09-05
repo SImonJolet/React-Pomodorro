@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-
+import Modal from "./modal.jsx"
 export default () => {
     const [seconde, setSeconde] = useState(5);
     const [paused, setPaused] = useState(true);
@@ -13,6 +13,7 @@ export default () => {
                         setSeconde(5*60);
                         clearInterval(interval);
                         return s;
+                       
                     }
                     return s - 1;
                 });
@@ -57,7 +58,7 @@ export default () => {
             <div className={"bouton"}>
                 {" "}
                 <button id={"plusBtn"} type={"button"} onClick={setPlus}>
-                    {"Plus"}
+                    {"Ajouter 1 minute"}
                 </button>
                 <button
                     id={"startStopBtn"}
@@ -66,10 +67,10 @@ export default () => {
                     {paused ? "Démarrer" : "Pause"}
                 </button>
                 <button id={"resetBtn"} type={"button"} onClick={resetTimer}>
-                    {"Reset"}
+                    {"Re-démarrer à 25:00"}
                 </button>
                 <button id={"moinsBtn"} type={"button"} onClick={setMoins}>
-                    {"Moins"}
+                    {"Retirer 1 minute"}
                 </button>
             </div>
         </div>
