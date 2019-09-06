@@ -1,11 +1,12 @@
-import React, {useState, useEffect, Component} from "react";
+import React, {useState, useEffect} from "react";
 import Modal from "./modal.jsx";
 export default () => {
-    const [seconde, setSeconde] = useState(180);
+    const [seconde, setSeconde] = useState(25 * 60);
     const [paused, setPaused] = useState(true);
     const [show, setShow] = useState(false);
-
-    
+    const showModal = () => {
+        setShow(true);
+    };
     useEffect(() => {
         const interval = setInterval(() => {
             if (!paused) {
@@ -13,37 +14,26 @@ export default () => {
                     if (s <= 0) {
                         setPaused(true);
                         clearInterval(interval);
-                        showModal();
+                        showModal(true);
+                        setSeconde(5 * 60);
                         return s;
-                        
                     }
                     return s - 1;
                 });
-            };
-            
-        }, 25);
+            }
+        }, 1000);
         return () => {
             clearInterval(interval);
         };
     }, [paused]);
-    const showModal = () => {
-
-            setShow(true);
-    };
-    const hideModal = () => {
-        if (second >= 1){
-            setShow(false);
-        }
-    }
 
     const setPlus = () => {
         if (paused) {
             setSeconde(seconde + 60);
         }
-        
     };
     const setMoins = () => {
-        if (seconde >60 && paused) {
+        if (seconde > 60 && paused) {
             setSeconde(seconde - 60);
         }
     };
@@ -67,26 +57,36 @@ export default () => {
                     .padStart(2, "0")}`}
             </div>
             <div className={"bouton"}>
-              
-                <button id={"plusBtn"} type={"button"}  className={"basicBtn"} onClick={setPlus}>
+                <button
+                    id={"plusBtn"}
+                    type={"button"}
+                    className={"basicBtn"}
+                    onClick={setPlus}>
                     {"Ajouter 1 minute"}
                 </button>
                 <button
                     id={"startStopBtn"}
-                    type={"button"} className={"basicBtn"} 
+                    type={"button"}
+                    className={"basicBtn"}
                     onClick={paused ? startTimer : pauseTimer}>
                     {paused ? "Démarrer" : "Pause"}
                 </button>
-                <button id={"resetBtn"} type={"button"} className={"basicBtn"}  onClick={resetTimer}>
+                <button
+                    id={"resetBtn"}
+                    type={"button"}
+                    className={"basicBtn"}
+                    onClick={resetTimer}>
                     {"Re-démarrer à 25:00"}
                 </button>
-                <button id={"moinsBtn"} type={"button"} className={"basicBtn"}  onClick={setMoins}>
+                <button
+                    id={"moinsBtn"}
+                    type={"button"}
+                    className={"basicBtn"}
+                    onClick={setMoins}>
                     {"Retirer 1 minute"}
                 </button>
 
-                
                 <Modal truc={show} />
-                 
             </div>
         </div>
     );

@@ -1,9 +1,5 @@
-html {
-    height: 100%;
-}
 body {
     margin: 0;
-    min-height: 100%;
 }
 /* définition de la police */
 /*Css du Header */
@@ -37,7 +33,7 @@ header {
     font-family: "Raleway", sans-serif;
     font-weight: 900;
     font-size: 10vw;
-    color: #2258CD;
+    color: #2258cd;
 }
 .bouton {
     display: flex;
@@ -59,7 +55,7 @@ header {
     padding: 1vw;
     cursor: pointer;
 }
-.modalBox{
+.modalBox {
     border: 1px solid red;
 }
 @media (max-width: 425px) {
@@ -94,6 +90,38 @@ footer {
     text-decoration: none;
     color: black;
 }
-h1 {
-    color: red;
+main {
+    position: relative;
+}
+
+#modal {
+    position: absolute;
+    width: 72%;
+    height: 20vw;
+    margin-left: 14%;
+    margin-top: -24vw;
+    border: 1px solid #2258cd;
+    background-color: #a6e1f3;
+    opacity: 0.9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: 3.5vw;
+    border-radius: 5px;
+    color: #2258cd;
+}
+#modalButtons {
+    display: flex;
+    width: 70%;
+}
+.modalBtn {
+    padding: 7px;
+}
+#closeModal {
+    margin-right: 10px;
+}
+#pauseTimer {
+    margin-left: 10px;
 }
