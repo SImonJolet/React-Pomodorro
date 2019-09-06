@@ -1,9 +1,9 @@
 import React, {useState, useEffect, Component} from "react";
 import Modal from "./modal.jsx";
 export default () => {
-    const [seconde, setSeconde] = useState(5);
+    const [seconde, setSeconde] = useState(180);
     const [paused, setPaused] = useState(true);
-    const [show] = useState(true);
+    const [show, setShow] = useState(false);
 
     
     useEffect(() => {
@@ -13,22 +13,22 @@ export default () => {
                     if (s <= 0) {
                         setPaused(true);
                         clearInterval(interval);
+                        showModal();
                         return s;
-                        show(true);
+                        
                     }
                     return s - 1;
                 });
             };
             
-        }, 1000);
+        }, 25);
         return () => {
             clearInterval(interval);
         };
     }, [paused]);
     const showModal = () => {
-        if (second <= 0){
+
             setShow(true);
-        }
     };
     const hideModal = () => {
         if (second >= 1){
@@ -85,7 +85,7 @@ export default () => {
                 </button>
 
                 
-                <Modal />
+                <Modal truc={show} />
                  
             </div>
         </div>

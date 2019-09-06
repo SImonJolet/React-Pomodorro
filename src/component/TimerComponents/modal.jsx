@@ -1,21 +1,28 @@
-import React, {Component} from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 
-function Modal (props) {
-    if (props.show) {
-
-    
-    return ReactDOM.createPortal(
-    <div id={"modal"}>
-        {"Have a break, Have a Kit Kat !!"}
-        <button type={"modalBtn"} className={"modalBtn"} id={"closeModal"}>Fermer</button>
-        <button type={"modalBtn"} className={"modalBtn"} id={"pauseTimer"}>Lancer 5 minutes de pause</button>
-
-    
-    </div>, document.body)
+function Modal(props) {
+    if (props.truc) {
+        return ReactDOM.createPortal(
+            <div id={"modal"}>
+                {"Have a break, Have a Kit Kat !!"}
+                <button
+                    type={"button"}
+                    className={"modalBtn"}
+                    id={"closeModal"}>
+                    {"Fermer"}
+                </button>
+                <button
+                    type={"button"}
+                    className={"modalBtn"}
+                    id={"pauseTimer"}>
+                    {"Lancer 5 minutes de pause"}
+                </button>
+            </div>,
+            document.querySelector("main"),
+        );
     }
     return null;
 }
-
 
 export default Modal;
